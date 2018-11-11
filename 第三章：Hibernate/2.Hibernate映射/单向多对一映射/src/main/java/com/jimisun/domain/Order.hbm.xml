@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!-- 配置类和表结构的映射 -->
+    <class name="com.jimisun.domain.Order" table="t_orders">
+        <!-- 配置id
+            见到name属性，JavaBean的属性
+            见到column属性，是表结构的字段
+        -->
+        <id name="id" column="id">
+            <!-- 主键的生成策略 -->
+            <generator class="increment"/>
+        </id>
+
+
+        <property name="number" column="order_number" type="java.lang.String"/>
+
+        <many-to-one name="customer" column="customer_id" class="com.jimisun.domain.Customer" cascade="all">
+
+        </many-to-one>
+
+    </class>
+
+</hibernate-mapping>
