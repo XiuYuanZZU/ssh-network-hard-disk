@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- 根元素 -->
+<struts>
+    <!-- 配置包，包名为default，该包继承了struts2框架的默认包struts-default，命名空间为“/” -->
+    <package name="default" extends="struts-default" namespace="/">
+
+        <!--配置名为的x的Action，实现类为yAction，视图为z.jsp-->
+        <action name="hello" class="com.jimisun.action.TestAction">
+            <result name="hello">/WEB-INF/jsp/hello.jsp</result>
+        </action>
+
+    </package>
+</struts>
