@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- 根元素 -->
+<struts>
+
+
+    <constant name="struts.devMode" value="false"/>
+
+    <constant name="struts.custom.i18n.resources" value="Resource"/>
+
+    <package name="default" extends="struts-default" namespace="/">
+        <global-results>
+            <result name="exception">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.sql.SQLException" result="exception"></exception-mapping>
+        </global-exception-mappings>
+
+    </package>
+</struts>
