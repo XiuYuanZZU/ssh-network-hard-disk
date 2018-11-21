@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <!-- 配置类和表结构的映射 -->
+    <class name="com.jimisun.domain.User" table="user">
+        <!-- 配置id
+            见到name属性，JavaBean的属性
+            见到column属性，是表结构的字段
+        -->
+        <id name="id" column="id">
+            <!-- 主键的生成策略 -->
+            <generator class="increment"/>
+        </id>
+
+        <property name="username" column="username" type="java.lang.String"/>
+        <property name="password" column="password" type="java.lang.String"/>
+
+    </class>
+
+</hibernate-mapping>
